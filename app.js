@@ -30,20 +30,31 @@ function startTimer() {
 }
 
 function stopTimer() {
-  resetBtn.disabled = false;
   startBtn.display = "inline-block";
   stopBtn.display = "none";
   clearInterval(timer);
 }
 function resetTimer() {
+  stopTimer();
   seconds = 0;
   minutes = 0;
   miliSeconds = 0;
   getMinutes.innerHTML = minutes + `<span>m</span>`;
   getSeconds.innerHTML = seconds + `<span>s</span>`;
   getMiliSeconds.innerHTML = miliSeconds + `<span>ms</span>`;
-  resetBtn.disabled = true;
 }
+
+var full = document.getElementById("full").style;
+var exit = document.getElementById("exit").style;
+
 function fullScreen() {
   document.documentElement.requestFullscreen();
+  full.display = "none";
+  exit.display = "inline-block";
+}
+function exitScreen() {
+  console.log("working");
+  document.exitFullscreen();
+  full.display = "inline-block";
+  exit.display = "none";
 }

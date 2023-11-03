@@ -25,9 +25,14 @@
   display: flex;
   gap: 20px;
   padding: 25px;
+  height: 250px;
+  justify-content: center;
+  align-items: center;
 }
 .stopWatch p {
   font-size: 5em;
+  width: 130px;
+  text-align: center;
 }
 .stopWatch span {
   font-size: 22px;
@@ -41,6 +46,7 @@
 }
 .btnBox button {
   font-size: 1em;
+  width: 120px;
   padding: 10px 30px;
   border: none;
   border-radius: 5px;
@@ -79,4 +85,7 @@ button#reset {
 }
 #timerHeader {
   cursor: no-drop;
+}
+#exit {
+  display: none;
 }
