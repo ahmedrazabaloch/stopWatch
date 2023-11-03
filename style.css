@@ -7,7 +7,7 @@
   font-family: "Roboto", sans-serif;
 }
 .container {
-  margin: 25px auto;
+  margin: 50px auto;
   width: 70%;
   color: #202124;
   border: 1px solid rgba(32, 33, 36, 0.3);
@@ -37,6 +37,7 @@
   align-items: center;
   padding: 25px;
   border-top: 1px solid rgba(32, 33, 36, 0.3);
+  justify-content: space-between;
 }
 .btnBox button {
   font-size: 1em;
@@ -60,4 +61,12 @@ button#reset {
 }
 #stop {
   display: none;
+}
+#fullScreen {
+  cursor: pointer;
+  display: flex;
+  gap: 20px;
+}
+#screenShort {
+  cursor: no-drop;
 }
