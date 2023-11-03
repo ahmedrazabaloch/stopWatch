@@ -9,18 +9,21 @@
   <body>
     <div class="container">
       <nav class="heading">
-        <div>TIMER</div>
-        <div>STOPWATCH</div>
+        <div id="timerHeader">TIMER</div>
+        <div id="watchHeader">STOPWATCH</div>
       </nav>
       <div class="stopWatch">
-        <p id="min">00</p>
-        <p id="sec">00</p>
-        <p id="mSec">00</p>
+        <p id="min">0<span>m</span></p>
+        <p id="sec">0<span>s</span></p>
+        <p id="mSec">0<span>ms</span></p>
       </div>
-      <div>
-        <button id="start" onclick="startTimer()">Start</button>
-        <button id="stop" onclick="stopTimer()">Stop</button>
-        <button id="reset" onclick="resetTimer()">Reset</button>
+      <div class="btnBox">
+        <div>
+          <button id="start" onclick="startTimer()">Start</button>
+          <button id="stop" onclick="stopTimer()">Stop</button>
+          <button id="reset" onclick="resetTimer()" disabled>Reset</button>
+        </div>
+        <div><img src="" alt="" /></div>
       </div>
     </div>
 
