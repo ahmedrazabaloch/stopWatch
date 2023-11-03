@@ -7,7 +7,7 @@
   font-family: "Roboto", sans-serif;
 }
 .container {
-  margin: 50px auto;
+  margin: 8% auto 0;
   width: 70%;
   color: #202124;
   border: 1px solid rgba(32, 33, 36, 0.3);
@@ -44,7 +44,9 @@
   border-top: 1px solid rgba(32, 33, 36, 0.3);
   justify-content: space-between;
 }
-.btnBox button {
+#start,
+#stop,
+#reset {
   font-size: 1em;
   width: 120px;
   padding: 10px 30px;
@@ -55,6 +57,12 @@
   background-color: #1a73e8;
   color: #fff;
   cursor: pointer;
+  transition: all 0.4s linear;
+}
+#start:hover,
+#stop:hover {
+  background-color: #1b66c9;
+  border: 1px solid #1b66c9;
 }
 button#reset {
   background-color: #fff;

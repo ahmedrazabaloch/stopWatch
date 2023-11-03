@@ -2,14 +2,15 @@ var getMinutes = document.getElementById("min"),
   getSeconds = document.getElementById("sec"),
   getMiliSeconds = document.getElementById("mSec");
 
-var startBtn = document.getElementById("start").style;
-var stopBtn = document.getElementById("stop").style;
-var resetBtn = document.getElementById("reset");
+var startBtn = document.getElementById("start").style,
+  stopBtn = document.getElementById("stop").style,
+  container = document.querySelector(".container").style,
+  resetBtn = document.getElementById("reset");
 
-var minutes = 0;
-var seconds = 0;
-var miliSeconds = 0;
-var timer;
+var minutes = 0,
+  seconds = 0,
+  miliSeconds = 0,
+  timer;
 
 function startTimer() {
   startBtn.display = "none";
@@ -39,9 +40,9 @@ function resetTimer() {
   seconds = 0;
   minutes = 0;
   miliSeconds = 0;
-  getMinutes.innerHTML = minutes + `<span>m</span>`;
-  getSeconds.innerHTML = seconds + `<span>s</span>`;
-  getMiliSeconds.innerHTML = miliSeconds + `<span>ms</span>`;
+  getMinutes.innerHTML = minutes + "0" + `<span>m</span>`;
+  getSeconds.innerHTML = seconds + "0" + `<span>s</span>`;
+  getMiliSeconds.innerHTML = miliSeconds + "0" + `<span>ms</span>`;
 }
 
 var full = document.getElementById("full").style;
@@ -49,12 +50,14 @@ var exit = document.getElementById("exit").style;
 
 function fullScreen() {
   document.documentElement.requestFullscreen();
+  container.marginTop = "16%";
+
   full.display = "none";
   exit.display = "inline-block";
 }
 function exitScreen() {
-  console.log("working");
   document.exitFullscreen();
+  container.marginTop = "8%";
   full.display = "inline-block";
   exit.display = "none";
 }
