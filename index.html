@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <div class="container">
+      <nav class="heading">
+        <div>TIMER</div>
+        <div>STOPWATCH</div>
+      </nav>
+      <div class="stopWatch">
+        <p id="min">00</p>
+        <p id="sec">00</p>
+        <p id="mSec">00</p>
+      </div>
+      <div>
+        <button id="start" onclick="startTimer()">Start</button>
+        <button id="stop" onclick="stopTimer()">Stop</button>
+        <button id="reset" onclick="resetTimer()">Reset</button>
+      </div>
+    </div>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
