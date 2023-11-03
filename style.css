@@ -70,3 +70,11 @@ button#reset {
 #screenShort {
   cursor: no-drop;
 }
+#watchHeader,
+#timerHeader {
+  cursor: pointer;
+}
+#watchHeader:hover,
+#timerHeader:hover {
+  border-bottom: 1px solid #1a73e8;
+}

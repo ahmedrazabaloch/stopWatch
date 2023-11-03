@@ -44,3 +44,6 @@ function resetTimer() {
   getMiliSeconds.innerHTML = miliSeconds + `<span>ms</span>`;
   resetBtn.disabled = true;
 }
+function fullScreen() {
+  document.documentElement.requestFullscreen();
+}
