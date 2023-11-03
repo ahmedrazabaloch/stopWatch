@@ -10,8 +10,14 @@
   <body>
     <div class="container">
       <nav class="heading">
-        <div id="timerHeader">TIMER</div>
-        <div id="watchHeader">STOPWATCH</div>
+        <div id="timerHeader">
+          <img src="glasshour.png" />
+          TIMER
+        </div>
+        <div id="watchHeader">
+          <img src="stopwatch.png" />
+          STOPWATCH
+        </div>
       </nav>
       <div class="stopWatch">
         <p id="min">0<span>m</span></p>
@@ -25,11 +31,7 @@
           <button id="reset" onclick="resetTimer()" disabled>Reset</button>
         </div>
         <div id="fullScreen">
-          <img
-            id="screenShort"
-            src="screenShort.png"
-            title="Screen Short"
-          />
+          <img id="screenShort" src="screenShort.png" title="Screen Short" />
           <img
             src="fullScreen.png"
             onclick="fullScreen()"

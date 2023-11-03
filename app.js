@@ -21,7 +21,7 @@ function startTimer() {
       seconds++;
       getSeconds.innerHTML = seconds + `<span>s</span>`;
       miliSeconds = 0;
-    } else if (seconds > 5) {
+    } else if (seconds >= 60) {
       minutes++;
       getMinutes.innerHTML = minutes + `<span>m</span>`;
       seconds = 0;
