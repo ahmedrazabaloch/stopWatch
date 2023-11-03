@@ -77,3 +77,6 @@ button#reset {
   align-items: center;
   gap: 10px;
 }
+#timerHeader {
+  cursor: no-drop;
+}
