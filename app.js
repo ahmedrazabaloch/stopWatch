@@ -1,3 +1,5 @@
+// >>>>>> Stop Watch <<<<<
+
 var getMinutes = document.getElementById("min"),
   getSeconds = document.getElementById("sec"),
   getMiliSeconds = document.getElementById("mSec");
@@ -7,17 +9,20 @@ var startBtn = document.getElementById("start").style,
   container = document.querySelector(".container").style,
   resetBtn = document.getElementById("reset");
 
+var full = document.getElementById("full").style;
+var exit = document.getElementById("exit").style;
+
 var minutes = 0,
   seconds = 0,
   miliSeconds = 0,
-  timer;
+  stopWatch;
 
-function startTimer() {
+function startStopWach() {
   startBtn.display = "none";
   stopBtn.display = "inline-block";
-  timer = setInterval(() => {
+  stopWatch = setInterval(() => {
     miliSeconds++;
-    getMiliSeconds.innerHTML = miliSeconds + `<span>ms</span>`;
+    getMiliSeconds.innerHTML = miliSeconds;
     if (miliSeconds >= 100) {
       seconds++;
       getSeconds.innerHTML = seconds + `<span>s</span>`;
@@ -30,28 +35,24 @@ function startTimer() {
   }, 10);
 }
 
-function stopTimer() {
+function stopStopWatch() {
   startBtn.display = "inline-block";
   stopBtn.display = "none";
-  clearInterval(timer);
+  clearInterval(stopWatch);
 }
-function resetTimer() {
-  stopTimer();
+function resetStopWatch() {
+  stopStopWatch();
   seconds = 0;
   minutes = 0;
   miliSeconds = 0;
   getMinutes.innerHTML = minutes + "0" + `<span>m</span>`;
   getSeconds.innerHTML = seconds + "0" + `<span>s</span>`;
-  getMiliSeconds.innerHTML = miliSeconds + "0" + `<span>ms</span>`;
+  getMiliSeconds.innerHTML = miliSeconds + "0";
 }
-
-var full = document.getElementById("full").style;
-var exit = document.getElementById("exit").style;
 
 function fullScreen() {
   document.documentElement.requestFullscreen();
   container.marginTop = "16%";
-
   full.display = "none";
   exit.display = "inline-block";
 }
@@ -60,4 +61,31 @@ function exitScreen() {
   container.marginTop = "8%";
   full.display = "inline-block";
   exit.display = "none";
+}
+
+// >>>>>> Timer <<<<<
+
+var getTimerMinutes = document.getElementById("minutes"),
+  getTimerSeconds = document.getElementById("second");
+
+var timer;
+
+getTimerMinutes.addEventListener("click", () => {
+  getTimerMinutes.value = "";
+  getTimerSeconds.value = "";
+});
+
+function startTimer() {
+  var timerMinutes = getTimerMinutes.value,
+    timerSecond = getTimerSeconds.value;
+  timer = setInterval(() => {
+    if (!timerMinutes && !timerSecond) {
+      alert("please add a value to start the timer");
+    }
+    if (timerMinutes && timerSecond) {
+      console.log("timer to add a function");
+    } else {
+      console.log("Minute ==>", timerMinutes, "Seconds==>", timerSecond);
+    }
+  }, 1000);
 }

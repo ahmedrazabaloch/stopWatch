@@ -13,6 +13,11 @@
   border: 1px solid rgba(32, 33, 36, 0.3);
   border-radius: 5px;
 }
+
+/* Stop watch  */
+.watch {
+  display: none;
+}
 .heading {
   display: flex;
   border-bottom: 1px solid rgba(32, 33, 36, 0.3);
@@ -96,4 +101,25 @@ button#reset {
 }
 #exit {
   display: none;
+}
+
+/* Timer */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.timer > .stopWatch {
+  display: flex;
+  gap: 0;
+}
+.timer input {
+  all: unset;
+  font-size: 5em;
+  width: 90px;
+  text-align: center;
+}
+.timer > .stopWatch span {
+  margin: 35px 10px 0 0px;
 }
