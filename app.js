@@ -62,30 +62,3 @@ function exitScreen() {
   full.display = "inline-block";
   exit.display = "none";
 }
-
-// >>>>>> Timer <<<<<
-
-var getTimerMinutes = document.getElementById("minutes"),
-  getTimerSeconds = document.getElementById("second");
-
-var timer;
-
-getTimerMinutes.addEventListener("click", () => {
-  getTimerMinutes.value = "";
-  getTimerSeconds.value = "";
-});
-
-function startTimer() {
-  var timerMinutes = getTimerMinutes.value,
-    timerSecond = getTimerSeconds.value;
-  timer = setInterval(() => {
-    if (!timerMinutes && !timerSecond) {
-      alert("please add a value to start the timer");
-    }
-    if (timerMinutes && timerSecond) {
-      console.log("timer to add a function");
-    } else {
-      console.log("Minute ==>", timerMinutes, "Seconds==>", timerSecond);
-    }
-  }, 1000);
-}
