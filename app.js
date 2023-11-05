@@ -11,7 +11,7 @@ var full = document.getElementById("full").style;
 var exit = document.getElementById("exit").style;
 
 var stopWatchTimer = document.querySelector(".watch").style;
-// var CountdownTimer = document.querySelector(".timer").style;
+var CountdownTimer = document.querySelector(".timer").style;
 
 // >>>>>> Redirecting & Stying Heading Start<<<<<<
 
