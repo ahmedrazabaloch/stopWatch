@@ -15,20 +15,28 @@ var exit = document.getElementById("exit").style;
 var stopWatchTimer = document.querySelector(".watch").style;
 var CountdownTimer = document.querySelector(".timer").style;
 
-var timerHeader = document
-  .getElementById("timerHeader")
-  .addEventListener("click", () => {
-    stopWatchTimer.display = "none";
-    CountdownTimer.display = "block";
-  });
-var watchHeader = document
-  .getElementById("watchHeader")
-  .addEventListener("click", () => {
-    stopWatchTimer.display = "block";
-    CountdownTimer.display = "none";
-  });
+// >>>>>> Redirecting page <<<<<<
 
-// addEventListener(c)
+var timerHeaders = document.getElementById("timerHeader").style;
+var watchHeaders = document.getElementById("watchHeader").style;
+
+function timerHeader() {
+  stopWatchTimer.display = "none";
+  CountdownTimer.display = "block";
+  timerHeaders.borderBottom = "2px solid #1a73e8";
+  timerHeaders.color = "#1a73e8";
+  watchHeaders.borderBottom = "2px solid #fff";
+  watchHeaders.color = "#000";
+}
+
+function watchHeader() {
+  stopWatchTimer.display = "block";
+  CountdownTimer.display = "none";
+  watchHeaders.borderBottom = "2px solid #1a73e8";
+  watchHeaders.color = "#1a73e8";
+  timerHeaders.borderBottom = "2px solid #fff";
+  timerHeaders.color = "#000";
+}
 
 var minutes = 0,
   seconds = 0,

@@ -14,20 +14,29 @@
   border-radius: 5px;
 }
 
+#watchHeader,
+#timerHeader {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+  padding: 30px;
+  width: 50%;
+  justify-content: center;
+  border-bottom: 2px solid #fff;
+}
 
 /* Stop watch  */
-.timer:active{
-background-color: #1b66c9;
-}
 .timer {
   display: none;
+  user-select: none;
 }
 .heading {
   display: flex;
   border-bottom: 1px solid rgba(32, 33, 36, 0.3);
   align-items: center;
   justify-content: space-around;
-  padding: 30px 0;
   font-size: 1.5em;
 }
 .stopWatch {
@@ -93,16 +102,7 @@ button#reset {
 #screenShort {
   cursor: no-drop;
 }
-#watchHeader,
-#timerHeader {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-/* #timerHeader {
-  cursor: no-drop;
-} */
+
 #exit {
   display: none;
 }
