@@ -1,5 +1,3 @@
-// >>>>>> Stop Watch <<<<<
-
 var getMinutes = document.getElementById("min"),
   getSeconds = document.getElementById("sec"),
   getMiliSeconds = document.getElementById("mSec");
@@ -15,7 +13,7 @@ var exit = document.getElementById("exit").style;
 var stopWatchTimer = document.querySelector(".watch").style;
 var CountdownTimer = document.querySelector(".timer").style;
 
-// >>>>>> Redirecting page <<<<<<
+// >>>>>> Redirecting & Stying Heading Start<<<<<<
 
 var timerHeaders = document.getElementById("timerHeader").style;
 var watchHeaders = document.getElementById("watchHeader").style;
@@ -38,6 +36,8 @@ function watchHeader() {
   timerHeaders.color = "#000";
 }
 
+// >>>>>> Stop Watch <<<<<<
+
 var minutes = 0,
   seconds = 0,
   miliSeconds = 0,
@@ -53,19 +53,24 @@ function startStopWach() {
       seconds++;
       getSeconds.innerHTML = seconds + `<span>s</span>`;
       miliSeconds = 0;
-    } else if (seconds >= 60) {
+    } else if (seconds >= 10) {
+      seconds = 0;
       minutes++;
       getMinutes.innerHTML = minutes + `<span>m</span>`;
-      seconds = 0;
     }
   }, 10);
 }
+
+// >>>>>> Stop Watch Pause <<<<<<
 
 function stopStopWatch() {
   startBtn.display = "inline-block";
   stopBtn.display = "none";
   clearInterval(stopWatch);
 }
+
+// >>>>>> Stop Watch Reset <<<<<<
+
 function resetStopWatch() {
   stopStopWatch();
   seconds = 0;
@@ -76,12 +81,17 @@ function resetStopWatch() {
   getMiliSeconds.innerHTML = miliSeconds + "0";
 }
 
+// >>>>>> Full Screen <<<<<<
+
 function fullScreen() {
   document.documentElement.requestFullscreen();
   container.marginTop = "16%";
   full.display = "none";
   exit.display = "inline-block";
 }
+
+// >>>>>> Exit Full Screen <<<<<<
+
 function exitScreen() {
   document.exitFullscreen();
   container.marginTop = "8%";

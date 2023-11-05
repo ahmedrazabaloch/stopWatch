@@ -28,9 +28,8 @@
 }
 
 /* Stop watch  */
-.timer {
+.watch {
   display: none;
-  user-select: none;
 }
 .heading {
   display: flex;
@@ -41,7 +40,7 @@
 }
 .stopWatch {
   display: flex;
-  gap: 20px;
+  /* gap: 20px; */
   padding: 25px;
   height: 250px;
   justify-content: center;
@@ -49,10 +48,13 @@
 }
 .stopWatch p {
   font-size: 5em;
-  width: 130px;
   text-align: center;
+  width: 130px;
 }
-.stopWatch span {
+.stopWatch > span {
+  font-size: 5em;
+}
+.stopWatch > p > span {
   font-size: 22px;
 }
 .btnBox {
