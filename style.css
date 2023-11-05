@@ -129,3 +129,6 @@ input::-webkit-inner-spin-button {
 .timer > .stopWatch span {
   margin: 35px 10px 0 0px;
 }
+p#timerDisplay {
+  width: max-content;
+}

@@ -81,6 +81,40 @@ function resetStopWatch() {
   getMiliSeconds.innerHTML = miliSeconds + "0";
 }
 
+// >>>>>> CountDown Timer Start <<<<<<
+
+var TimerDisplay = document.getElementById("timerDisplay");
+
+var timerMinutes = "0" + 5,
+  timerSeconds = 59,
+  SetTimer;
+
+function startTimer() {
+  startBtn.display = "none";
+  stopBtn.display = "inline-block";
+  SetTimer = setInterval(() => {
+    timerSeconds--;
+    if (timerSeconds < 10) {
+      TimerDisplay.innerHTML = `${timerMinutes}${":"}${0}${timerSeconds}`;
+    } else {
+      TimerDisplay.innerHTML = `${timerMinutes}${":"}${timerSeconds}`;
+    }
+    if (timerSeconds == 0) {
+      timerSeconds = 59;
+      timerMinutes--;
+      TimerDisplay.innerHTML = `${timerMinutes}${":"}${timerSeconds}`;
+    } else if (timerMinutes === 0) {
+      timerSeconds = 0;
+      timerMinutes = 0;
+      TimerDisplay.innerHTML = `${"0" + timerMinutes}${":"}${
+        "0" + timerSeconds
+      }`;
+      clearInterval(SetTimer);
+      console.log("stop");
+    }
+  }, 1000);
+}
+
 // >>>>>> Full Screen <<<<<<
 
 function fullScreen() {
