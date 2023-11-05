@@ -14,8 +14,12 @@
   border-radius: 5px;
 }
 
+
 /* Stop watch  */
-.watch {
+.timer:active{
+background-color: #1b66c9;
+}
+.timer {
   display: none;
 }
 .heading {
@@ -96,9 +100,9 @@ button#reset {
   align-items: center;
   gap: 10px;
 }
-#timerHeader {
+/* #timerHeader {
   cursor: no-drop;
-}
+} */
 #exit {
   display: none;
 }

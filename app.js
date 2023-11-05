@@ -12,6 +12,24 @@ var startBtn = document.getElementById("start").style,
 var full = document.getElementById("full").style;
 var exit = document.getElementById("exit").style;
 
+var stopWatchTimer = document.querySelector(".watch").style;
+var CountdownTimer = document.querySelector(".timer").style;
+
+var timerHeader = document
+  .getElementById("timerHeader")
+  .addEventListener("click", () => {
+    stopWatchTimer.display = "none";
+    CountdownTimer.display = "block";
+  });
+var watchHeader = document
+  .getElementById("watchHeader")
+  .addEventListener("click", () => {
+    stopWatchTimer.display = "block";
+    CountdownTimer.display = "none";
+  });
+
+// addEventListener(c)
+
 var minutes = 0,
   seconds = 0,
   miliSeconds = 0,
