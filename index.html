@@ -55,32 +55,32 @@
         </div>
       </main>
       <main class="timer">
-        <!-- <div class="stopWatch">
+        <div class="stopWatch">
           <p id="minutes">05<span>m</span></p>
           <p>:</p>
           <p id="second">30<span>s</span></p>
         </div>
         <div class="btnBox">
           <div>
-            <button class="start" onclick="startTimer()">Start</button>
-            <button class="stop" onclick="stopTimer()">Stop</button>
-            <button class="reset" onclick="resetTimer()">Reset</button>
+            <button id="start" onclick="startTimer()">Start</button>
+            <button id="stop" onclick="stopTimer()">Stop</button>
+            <button id="reset" onclick="resetTimer()">Reset</button>
           </div>
           <div id="fullScreen">
             <img
-              class="full"
+              id="full"
               src="img/fullScreen.png"
-              onclick="timerFullScreen()"
+              onclick="fullScreen()"
               title="Full Screen"
             />
             <img
-              class="exit"
+              id="exit"
               src="img/fullScreen.png"
-              onclick="timerExitScreen()"
+              onclick="exitScreen()"
               title="Full Screen"
             />
           </div>
-        </div> -->
+        </div>
       </main>
     </div>
 
