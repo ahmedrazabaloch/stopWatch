@@ -54,7 +54,7 @@
           </div>
         </div>
       </main>
-      <main class="timer">
+      <!-- <main class="timer">
         <div class="stopWatch">
           <p id="minutes">05<span>m</span></p>
           <p>:</p>
@@ -62,29 +62,28 @@
         </div>
         <div class="btnBox">
           <div>
-            <button id="start" onclick="startTimer()">Start</button>
-            <button id="stop" onclick="stopTimer()">Stop</button>
-            <button id="reset" onclick="resetTimer()">Reset</button>
+            <button class="start" onclick="startTimer()">Start</button>
+            <button class="stop" onclick="stopTimer()">Stop</button>
+            <button class="reset" onclick="resetTimer()">Reset</button>
           </div>
           <div id="fullScreen">
             <img
-              id="full"
+              class="full"
               src="img/fullScreen.png"
-              onclick="fullScreen()"
+              onclick="timerFullScreen()"
               title="Full Screen"
             />
             <img
-              id="exit"
+              class="exit"
               src="img/fullScreen.png"
-              onclick="exitScreen()"
+              onclick="timerExitScreen()"
               title="Full Screen"
             />
           </div>
         </div>
-      </main>
+      </main> -->
     </div>
 
     <script src="app.js"></script>
-    <script src="timer.js"></script>
   </body>
 </html>
