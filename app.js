@@ -4,7 +4,7 @@ var getMinutes = document.getElementById("min"),
 
 var startBtn = document.querySelector(".start").style,
   stopBtn = document.querySelector(".stop").style,
-  container = document.querySelector(".container").style,
+  container = document.querySelector(".container"),
   resetBtn = document.querySelector(".reset");
 
 var full = document.querySelector(".full").style;
@@ -100,7 +100,8 @@ var SetTimer;
 function startTimer() {
   var timerMinutes = userInput.value || 5,
     timerSeconds = 59;
-
+  userInput.style.display = "none";
+  TimerDisplay.style.display = "block";
   tStartBtn.display = "none";
   tStopBtn.display = "inline-block";
   SetTimer = setInterval(() => {
@@ -121,8 +122,7 @@ function startTimer() {
       clearInterval(SetTimer);
     }
   }, 1000);
-  userInput.style.display = "none";
-  TimerDisplay.style.display = "block";
+  userInput.value = 5;
 }
 
 // >>>>>> Timer Pause <<<<<<
@@ -147,7 +147,7 @@ function resetTimer() {
 
 function fullScreen() {
   document.documentElement.requestFullscreen();
-  container.marginTop = "16%";
+  container.style.marginTop = "16%";
   full.display = "none";
   exit.display = "inline-block";
 }
@@ -156,7 +156,7 @@ function fullScreen() {
 
 function exitScreen() {
   document.exitFullscreen();
-  container.marginTop = "8%";
+  container.style.marginTop = "8%";
   full.display = "inline-block";
   exit.display = "none";
 }
