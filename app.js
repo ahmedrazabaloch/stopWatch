@@ -2,13 +2,13 @@ var getMinutes = document.getElementById("min"),
   getSeconds = document.getElementById("sec"),
   getMiliSeconds = document.getElementById("mSec");
 
-var startBtn = document.getElementById("start").style,
-  stopBtn = document.getElementById("stop").style,
+var startBtn = document.querySelector(".start").style,
+  stopBtn = document.querySelector(".stop").style,
   container = document.querySelector(".container").style,
-  resetBtn = document.getElementById("reset");
+  resetBtn = document.querySelector(".reset");
 
-var full = document.getElementById("full").style;
-var exit = document.getElementById("exit").style;
+var full = document.querySelector(".full").style;
+var exit = document.querySelector(".exit").style;
 
 var stopWatchTimer = document.querySelector(".watch").style;
 var CountdownTimer = document.querySelector(".timer").style;
@@ -82,37 +82,55 @@ function resetStopWatch() {
 }
 
 // >>>>>> CountDown Timer Start <<<<<<
+var tStartBtn = document.querySelector(".tstart").style,
+  tStopBtn = document.querySelector(".tstop").style,
+  tResetBtn = document.querySelector(".treset");
 
 var TimerDisplay = document.getElementById("timerDisplay");
 
-var timerMinutes = "0" + 5,
-  timerSeconds = 59,
+var timerMinutes = 5,
+  timerSeconds = 5,
   SetTimer;
 
 function startTimer() {
-  startBtn.display = "none";
-  stopBtn.display = "inline-block";
+  tStartBtn.display = "none";
+  tStopBtn.display = "inline-block";
   SetTimer = setInterval(() => {
     timerSeconds--;
     if (timerSeconds < 10) {
-      TimerDisplay.innerHTML = `${timerMinutes}${":"}${0}${timerSeconds}`;
+      TimerDisplay.innerHTML = `${timerMinutes} : 0${timerSeconds}`;
     } else {
-      TimerDisplay.innerHTML = `${timerMinutes}${":"}${timerSeconds}`;
+      TimerDisplay.innerHTML = `${timerMinutes} : ${timerSeconds}`;
     }
     if (timerSeconds == 0) {
-      timerSeconds = 59;
+      timerSeconds = 60;
       timerMinutes--;
-      TimerDisplay.innerHTML = `${timerMinutes}${":"}${timerSeconds}`;
+      if (timerMinutes < 10) {
+        TimerDisplay.innerHTML = `${timerMinutes} : ${timerSeconds}`;
+      } else {
+        TimerDisplay.innerHTML = `${timerMinutes} : ${timerSeconds}`;
+      }
     } else if (timerMinutes === 0) {
       timerSeconds = 0;
       timerMinutes = 0;
-      TimerDisplay.innerHTML = `${"0" + timerMinutes}${":"}${
-        "0" + timerSeconds
-      }`;
+      TimerDisplay.innerHTML = `0${timerMinutes} : 0${timerSeconds}`;
       clearInterval(SetTimer);
-      console.log("stop");
     }
   }, 1000);
+}
+
+function stopTimer() {
+  tStartBtn.display = "inline-block";
+  tStopBtn.display = "none";
+  clearInterval(SetTimer);
+}
+
+function resetTimer() {
+  stopTimer();
+  clearInterval(SetTimer);
+  timerSeconds = 0;
+  timerMinutes = 0;
+  TimerDisplay.innerHTML = `0${timerMinutes} : 0${timerSeconds}`;
 }
 
 // >>>>>> Full Screen <<<<<<

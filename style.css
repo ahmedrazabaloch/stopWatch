@@ -64,9 +64,7 @@
   border-top: 1px solid rgba(32, 33, 36, 0.3);
   justify-content: space-between;
 }
-#start,
-#stop,
-#reset {
+.btnBox button {
   font-size: 1em;
   width: 120px;
   padding: 10px 30px;
@@ -79,21 +77,21 @@
   cursor: pointer;
   transition: all 0.4s linear;
 }
-#start:hover,
-#stop:hover {
+.btnhover:hover {
   background-color: #1b66c9;
   border: 1px solid #1b66c9;
 }
-button#reset {
+button.btnreset {
   background-color: #fff;
   color: #1a73e8;
   border: 1px solid rgba(32, 33, 36, 0.3);
 }
-#reset:hover {
+.btnreset:hover {
   border: 1px solid #f8f9fa;
   background-color: #f8f9fa;
 }
-#stop {
+.stop,
+.tstop {
   display: none;
 }
 #fullScreen {
@@ -105,7 +103,7 @@ button#reset {
   cursor: no-drop;
 }
 
-#exit {
+.exit {
   display: none;
 }
 
