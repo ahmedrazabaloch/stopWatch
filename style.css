@@ -130,3 +130,7 @@ input::-webkit-inner-spin-button {
 p#timerDisplay {
   width: max-content;
 }
+#userInput {
+  display: none;
+  width: 80%;
+}

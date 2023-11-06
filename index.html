@@ -29,9 +29,15 @@
         </div>
         <div class="btnBox">
           <div>
-            <button class="start btnhover" onclick="startStopWach()">Start</button>
-            <button class="stop btnhover" onclick="stopStopWatch()">Stop</button>
-            <button class="reset btnreset" onclick="resetStopWatch()">Reset</button>
+            <button class="start btnhover" onclick="startStopWach()">
+              Start
+            </button>
+            <button class="stop btnhover" onclick="stopStopWatch()">
+              Stop
+            </button>
+            <button class="reset btnreset" onclick="resetStopWatch()">
+              Reset
+            </button>
           </div>
           <div id="fullScreen">
             <img
@@ -56,13 +62,22 @@
       </main>
       <main class="timer">
         <div class="stopWatch">
-          <p id="timerDisplay">05 : 00</p>
+          <input
+            type="number"
+            id="userInput"
+            placeholder="5m"
+          />
+          <p id="timerDisplay">5 : 00</p>
         </div>
         <div class="btnBox">
           <div>
-            <button class="tstart btnhover" onclick="startTimer()">Start</button>
+            <button class="tstart btnhover" onclick="startTimer()">
+              Start
+            </button>
             <button class="tstop btnhover" onclick="stopTimer()">Stop</button>
-            <button class="treset btnreset" onclick="resetTimer()">Reset</button>
+            <button class="treset btnreset" onclick="resetTimer()">
+              Reset
+            </button>
           </div>
           <div id="fullScreen">
             <img

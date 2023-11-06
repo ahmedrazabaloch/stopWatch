@@ -82,17 +82,25 @@ function resetStopWatch() {
 }
 
 // >>>>>> CountDown Timer Start <<<<<<
+
 var tStartBtn = document.querySelector(".tstart").style,
   tStopBtn = document.querySelector(".tstop").style,
   tResetBtn = document.querySelector(".treset");
 
 var TimerDisplay = document.getElementById("timerDisplay");
+var userInput = document.getElementById("userInput");
 
-var timerMinutes = 5,
-  timerSeconds = 5,
-  SetTimer;
+TimerDisplay.addEventListener("click", () => {
+  userInput.style.display = "block";
+  TimerDisplay.style.display = "none";
+});
+
+var SetTimer;
 
 function startTimer() {
+  var timerMinutes = userInput.value || 5,
+    timerSeconds = 59;
+
   tStartBtn.display = "none";
   tStopBtn.display = "inline-block";
   SetTimer = setInterval(() => {
@@ -103,13 +111,9 @@ function startTimer() {
       TimerDisplay.innerHTML = `${timerMinutes} : ${timerSeconds}`;
     }
     if (timerSeconds == 0) {
-      timerSeconds = 60;
+      timerSeconds = 59;
       timerMinutes--;
-      if (timerMinutes < 10) {
-        TimerDisplay.innerHTML = `${timerMinutes} : ${timerSeconds}`;
-      } else {
-        TimerDisplay.innerHTML = `${timerMinutes} : ${timerSeconds}`;
-      }
+      TimerDisplay.innerHTML = `${timerMinutes} : ${timerSeconds}`;
     } else if (timerMinutes === 0) {
       timerSeconds = 0;
       timerMinutes = 0;
@@ -117,7 +121,11 @@ function startTimer() {
       clearInterval(SetTimer);
     }
   }, 1000);
+  userInput.style.display = "none";
+  TimerDisplay.style.display = "block";
 }
+
+// >>>>>> Timer Pause <<<<<<
 
 function stopTimer() {
   tStartBtn.display = "inline-block";
@@ -125,12 +133,14 @@ function stopTimer() {
   clearInterval(SetTimer);
 }
 
+// >>>>>> Timer Reset <<<<<<
+
 function resetTimer() {
   stopTimer();
   clearInterval(SetTimer);
   timerSeconds = 0;
   timerMinutes = 0;
-  TimerDisplay.innerHTML = `0${timerMinutes} : 0${timerSeconds}`;
+  TimerDisplay.innerHTML = `${timerMinutes} : 0${timerSeconds}`;
 }
 
 // >>>>>> Full Screen <<<<<<
