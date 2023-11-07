@@ -93,6 +93,7 @@ var userInput = document.getElementById("userInput");
 TimerDisplay.addEventListener("click", () => {
   userInput.style.display = "block";
   TimerDisplay.style.display = "none";
+  TimerDisplay.innerHTML = userInput.textContent;
 });
 
 var SetTimer;
@@ -100,8 +101,8 @@ var SetTimer;
 function startTimer() {
   var timerMinutes = userInput.value || 5,
     timerSeconds = 59;
-  userInput.style.display = "none";
   TimerDisplay.style.display = "block";
+  userInput.style.display = "none";
   tStartBtn.display = "none";
   tStopBtn.display = "inline-block";
   SetTimer = setInterval(() => {
